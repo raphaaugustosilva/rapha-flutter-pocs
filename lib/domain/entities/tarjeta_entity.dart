@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TarjetaEntity {
-  final String id;
-  final String nome;
-  final String status;
-  final String dataUltimoStatus;
+  final String? id;
+  final String? nome;
+  final String? status;
+  final String? dataUltimoStatus;
   TarjetaEntity({
     required this.id,
     required this.nome,
@@ -14,10 +14,10 @@ class TarjetaEntity {
 
   TarjetaEntity.fromJson(Map<String, Object?> json)
       : this(
-          id: json['documentId']! as String,
-          nome: json['nome']! as String,
-          status: json['status']! as String,
-          dataUltimoStatus: DateTime.parse((json['data_ultimo_status']! as Timestamp).toDate().toString()).toString(),
+          id: json['documentId'] as String?,
+          nome: json['nome'] as String?,
+          status: json['status'] as String?,
+          dataUltimoStatus: json['data_ultimo_status'] == null ? null : DateTime.parse((json['data_ultimo_status']! as Timestamp).toDate().toString()).toString(),
         );
 
   Map<String, Object?> toJson() {

@@ -48,10 +48,10 @@ class _FirestorePageState extends State<FirestorePage> {
 
                           return GestureDetector(
                             onTap: () => Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => FirestoreDetailPage(firestoreDocumentId: tarjetaEntity.id)),
+                              MaterialPageRoute(builder: (context) => FirestoreDetailPage(firestoreDocumentId: tarjetaEntity.id ?? "")),
                             ),
                             child: ListTile(
-                              title: Text(tarjetaEntity.nome),
+                              title: Text(tarjetaEntity.nome ?? ""),
                               subtitle: Text("Status: ${tarjetaEntity.status}"),
                               trailing: const Icon(Icons.arrow_forward),
                               //title: Text(data['nome']),
