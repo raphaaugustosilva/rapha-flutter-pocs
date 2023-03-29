@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "266518692826",
+    "project_id": "dia-pocs",
+    "storage_bucket": "dia-pocs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:266518692826:android:972155f525138d65cc76e3",
+        "android_client_info": {
+          "package_name": "com.dia.pocs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "266518692826-dfhrm389cmda1pggf26s2gjjlck6mv3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCClqRPTdIirUU3py0VlnWXNQc0McyYRx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "266518692826-dfhrm389cmda1pggf26s2gjjlck6mv3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

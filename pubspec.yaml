@@ -1,0 +1,40 @@
+name: teste
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.1 <3.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  
+  # Firebase
+  firebase_core: ^2.8.0
+  cloud_firestore: ^4.4.5
+
+  # General
+  http:
+  eventsource: ^0.4.0
+  web_socket_channel: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+  flutter_svg: ^1.1.5
+  lottie: ^2.0.0
+  usage: ^4.1.0
+  path_provider: ^2.0.13
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/animations/
