@@ -25,14 +25,14 @@ class FirestorePresenter {
   }
 
   Future<bool> postTest() async {
-    String endpointUrlTest = "https://294b-189-4-78-35.ngrok.io";
+    String endpointUrlTest = "https://6ad6-189-4-78-35.ngrok.io";
     errorDetailText = "";
 
     Map<String, dynamic> payload = {'type': 'MAIL', 'subject': 'Rapha', 'message': 'Hello Word'};
 
     try {
       var response = await http.post(
-        Uri.parse("$endpointUrlTest/test-sse"),
+        Uri.parse("$endpointUrlTest/notice"),
         headers: {'Content-Type': 'application/json', 'Accept-Language': 'application/json'},
         body: json.encode(payload),
       );
