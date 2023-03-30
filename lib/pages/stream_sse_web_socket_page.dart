@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:teste/pages/components/app_is_error_component.dart';
+import 'package:teste/pages/components/app_is_loading_component.dart';
 import 'package:teste/presenters/stream_sse_web_socket_presenter.dart';
 
 class StreamSseWebSocketPage extends StatefulWidget {
@@ -52,12 +54,12 @@ class _StreamSseWebSocketPageState extends State<StreamSseWebSocketPage> {
         future: futureInitSse,
         builder: (context, snapshot) {
           return (snapshot.connectionState != ConnectionState.done)
-              ? Center(child: makeIsLoading())
+              ? Center(child: AppIsLoadingComponent(loadingText: _loadingText))
               : Center(
                   child: _isError
-                      ? makeIsError()
+                      ? AppIsErrorComponent(_errorText)
                       : _isLoading
-                          ? makeIsLoading()
+                          ? AppIsLoadingComponent(loadingText: _loadingText)
                           : Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -81,33 +83,6 @@ class _StreamSseWebSocketPageState extends State<StreamSseWebSocketPage> {
                             ),
                 );
         },
-      ),
-    );
-  }
-
-  Widget makeIsLoading() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const CircularProgressIndicator(),
-          Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: Text(_loadingText ?? "", textAlign: TextAlign.center),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget makeIsError() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Text(
-        _errorText ?? "",
-        textAlign: TextAlign.center,
-        style: const TextStyle(color: Colors.red),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:teste/domain/entities/tarjeta_entity.dart';
 import 'package:teste/presenters/firestore_detail_presenter.dart';
+import 'package:teste/pages/components/app_is_loading_component.dart';
 
 class FirestoreDetailPage extends StatefulWidget {
   final String firestoreDocumentId;
@@ -29,7 +30,7 @@ class _FirestoreDetailPageState extends State<FirestoreDetailPage> {
         future: futureInitListeningToDocument,
         builder: (context, snapshot) {
           return (snapshot.connectionState != ConnectionState.done)
-              ? Center(child: makeIsLoading())
+              ? const Center(child: AppIsLoadingComponent())
               : Center(
                   child: StreamBuilder<DocumentSnapshot<TarjetaEntity>>(
                     stream: presenter.tarjetaDocumentStream,
@@ -78,16 +79,6 @@ class _FirestoreDetailPageState extends State<FirestoreDetailPage> {
         Text("$label: ", style: const TextStyle(fontWeight: FontWeight.bold)),
         Text(value),
       ],
-    );
-  }
-
-  Widget makeIsLoading() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [CircularProgressIndicator()],
-      ),
     );
   }
 }
